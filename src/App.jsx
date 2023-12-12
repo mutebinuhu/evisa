@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 import ContactUs from './components/ContactUs'
 
 
-const YourCard = ({title, content, image}) => {
+const YourCard = ({title, content, image, clickHandler}) => {
   return (
     <motion.div initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -36,6 +36,7 @@ const YourCard = ({title, content, image}) => {
         {/* Submit Button */}
         <button
           type="submit"
+          onClick={clickHandler}
           className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Book Now
@@ -173,11 +174,12 @@ const VisaForm = () => {
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showContactPage, setShowContactPage] = useState(false)
 
   return (
     <div className='relative'>
-      <div className='absolute right-0 z-30 w-1/3 screen bg-gray-100 px-4 py-4'>
-      <ContactUs/>
+      <div className='fixed right-0 z-30 w-1/3 screen '>
+      <ContactUs showPage={showContactPage}/>
       </div>
    <Navbar/>
    <div className='relative'>
@@ -193,15 +195,15 @@ function App() {
 
    <div className='sm:flex mx-4 space-x-4'>
     <div className='flex-1'>
-      <YourCard title="Vist Visa" image="https://img.freepik.com/free-photo/side-view-man-holding-passports_23-2150433348.jpg?w=826&t=st=1702294200~exp=1702294800~hmac=8ace8958c753a334b26a66a6d63b93ff1329d4c43f4674a3ac9fc743166f6749" content="Embark on a Journey of a Lifetime: Unleash the adventure waiting for you with our seamless visit visa services. Picture yourself exploring vibrant cultures, savoring exotic cuisines, and creating memories that last a lifetime. Let us be your gateway to new horizons."/>
+      <YourCard clickHandler={()=>setShowContactPage(true)} title="Vist Visa" image="https://img.freepik.com/free-photo/side-view-man-holding-passports_23-2150433348.jpg?w=826&t=st=1702294200~exp=1702294800~hmac=8ace8958c753a334b26a66a6d63b93ff1329d4c43f4674a3ac9fc743166f6749" content="Embark on a Journey of a Lifetime: Unleash the adventure waiting for you with our seamless visit visa services. Picture yourself exploring vibrant cultures, savoring exotic cuisines, and creating memories that last a lifetime. Let us be your gateway to new horizons."/>
 
     </div>
     <div className='flex-1'>
-   <YourCard title="Multiple Entry" image="https://img.freepik.com/free-photo/top-view-green-card-application_23-2149601368.jpg?w=826&t=st=1702366795~exp=1702367395~hmac=a856a1a6308dccf7e45bc5601d910e097d433a4a2f46cafc9aa793bbff5dc1d6" content="Unleash the Freedom to Roam: Introducing our multiple entry visa, your ticket to boundless exploration. Embrace the convenience of unrestricted travel, where each entry becomes a gateway to a new adventure. Say goodbye to limitations and hello to a world of possibilities. " />
+   <YourCard title="Multiple Entry" clickHandler={()=>setShowContactPage(true)} image="https://img.freepik.com/free-photo/top-view-green-card-application_23-2149601368.jpg?w=826&t=st=1702366795~exp=1702367395~hmac=a856a1a6308dccf7e45bc5601d910e097d433a4a2f46cafc9aa793bbff5dc1d6" content="Unleash the Freedom to Roam: Introducing our multiple entry visa, your ticket to boundless exploration. Embrace the convenience of unrestricted travel, where each entry becomes a gateway to a new adventure. Say goodbye to limitations and hello to a world of possibilities. " />
 
     </div>
     <div className='flex-1'>
-   <YourCard title="A2A Visa Change" image="https://img.freepik.com/free-photo/woman-with-luggage-during-pandemic-airport_23-2148789910.jpg?w=740&t=st=1702367222~exp=1702367822~hmac=52f4bfa81025380ba515167b38cde8882b169dc76ce0700d7ed8cef6a2620e61" content="Unlock the Avenues of Aspiration: Step into a world of endless opportunities with our A2A (Airport to Airport) visa. Seamlessly traverse international skies, effortlessly connecting global hubs and transforming layovers into adventures. Your express ticket to explore the world in transit"/>
+   <YourCard clickHandler={()=>setShowContactPage(true)} title="A2A Visa Change" image="https://img.freepik.com/free-photo/woman-with-luggage-during-pandemic-airport_23-2148789910.jpg?w=740&t=st=1702367222~exp=1702367822~hmac=52f4bfa81025380ba515167b38cde8882b169dc76ce0700d7ed8cef6a2620e61" content="Unlock the Avenues of Aspiration: Step into a world of endless opportunities with our A2A (Airport to Airport) visa. Seamlessly traverse international skies, effortlessly connecting global hubs and transforming layovers into adventures. Your express ticket to explore the world in transit"/>
 
     </div>
    </div> 

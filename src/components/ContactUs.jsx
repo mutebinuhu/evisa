@@ -1,16 +1,20 @@
 // ContactUs.js
 
-import React from 'react';
+import React, {useState} from 'react';
 import { motion } from 'framer-motion';
 
-const ContactUs = () => {
-  return (
-    <motion.div
+
+const ContactUs = ({showPage}) => {
+  console.log("show pae", showPage)
+  if(showPage){
+    return(
+
+      <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto mt-8"
+      className="container mx-auto mt-8 bg-gray-300  px-2 py-4 rounded-lg"
     >
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
       <form>
@@ -52,13 +56,16 @@ const ContactUs = () => {
         </div>
         <button
           type="submit"
-          className="bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600"
+          className="bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600"
         >
           Submit
         </button>
       </form>
     </motion.div>
   );
+  }
+  
+    
 };
 
 export default ContactUs;
