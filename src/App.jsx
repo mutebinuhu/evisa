@@ -9,10 +9,17 @@ import ImageOverlayComponent from './components/ImageOverlayComponent'
 
 
 import React from 'react';
+import WhatsAppButton from './components/WhatsAppButton'
+import { motion } from 'framer-motion';
+
 
 const YourCard = ({title, content, image}) => {
   return (
-    <div className="max-w-md  mx-auto bg-white rounded-md overflow-hidden shadow-md m-4">
+    <motion.div initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.5 }}
+     className="max-w-md  mx-auto bg-white rounded-md overflow-hidden shadow-md m-4">
       {/* Image Placeholder */}
       <div className="w-full h-40 bg-gray-300  bg-cover bg-center" style={{backgroundImage:`url(${image})`}}>
 
@@ -39,7 +46,7 @@ const YourCard = ({title, content, image}) => {
           Learn More
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -55,8 +62,10 @@ const VisaForm = () => {
     { name: 'Zimbabwe', code: 'ZW' },
   ];
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+   
+    country:'',
+    nationality:'',
+    location:''
   });
 
   const handleChange = (e) => {
@@ -64,6 +73,7 @@ const VisaForm = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    console.log("data", formData)
   };
 
   const handleSubmit = (e) => {
@@ -73,24 +83,24 @@ const VisaForm = () => {
   };
 
   return (
-    <div className='mx-4'>
-    <form onSubmit={handleSubmit} className="w-full mx-auto">
+    <div className='mx-4 '>
+    <form onSubmit={handleSubmit} className="w-full">
       <div className='flex justify-center space-x-8'>
 
-      <div className="mb-4 w-52">
+      <div className="mb-4 w-28 sm:w-52">
         <label htmlFor="name" className="block text-white text-sm font-bold mb-2">
           Country
         </label>
         <select
-          id="role"
-          name="role"
-          value={formData.role}
+          id="country"
+          name="country"
+          value={formData.country}
           onChange={handleChange}
-          className="shadow appearance-none border rounded w-full py-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           {countries.map((country)=>{
             return(
-              <option value="user">{country.name}</option>
+              <option value={country.code}>{country.name}</option>
 
             )
           })}
@@ -98,20 +108,20 @@ const VisaForm = () => {
         </select>
       </div>
 
-      <div className="mb-4 w-52">
-        <label htmlFor="email" className="block text-white text-sm font-bold mb-2">
+      <div className="mb-4 w-28 sm:w-52">
+        <label htmlFor="nationality" className="block text-white text-sm font-bold mb-2">
           Nationality
         </label>
         <select
-          id="role"
-          name="role"
-          value={formData.role}
+          id="nationality"
+          name="nationality"
+          value={formData.nationality}
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           {countries.map((country)=>{
             return(
-              <option value="user">{country.name}</option>
+              <option value={country.code}>{country.name}</option>
 
             )
           })}
@@ -119,20 +129,20 @@ const VisaForm = () => {
           {/* Add more options as needed */}
         </select>
       </div>
-      <div className="mb-4 w-52">
-        <label htmlFor="email" className="block text-white text-sm font-bold mb-2">
+      <div className="mb-4  w-28 sm:w-52">
+        <label htmlFor="location" className="block text-white text-sm font-bold mb-2">
           Location
         </label>
         <select
-          id="role"
-          name="role"
-          value={formData.role}
+          id="location"
+          name="location"
+          value={formData.location}
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           {countries.map((country)=>{
             return(
-              <option value="user">{country.name}</option>
+              <option value={country.code}>{country.name}</option>
 
             )
           })}
@@ -148,7 +158,9 @@ const VisaForm = () => {
           Get started
         </button>
       </div>
+      
      </div>
+     
     </form>
     </div>
   );
@@ -162,11 +174,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className='relative'>
+      
    <Navbar/>
    <div className='relative'>
    <Banner/>
-   <div className='absolute bottom-0'>
+   <div className='absolute bottom-0 '>
    <VisaForm/>
    </div>
 
@@ -188,12 +201,10 @@ function App() {
    <YourCard title="A2A Visa Change" image="https://img.freepik.com/free-photo/woman-with-luggage-during-pandemic-airport_23-2148789910.jpg?w=740&t=st=1702367222~exp=1702367822~hmac=52f4bfa81025380ba515167b38cde8882b169dc76ce0700d7ed8cef6a2620e61" content="Unlock the Avenues of Aspiration: Step into a world of endless opportunities with our A2A (Airport to Airport) visa. Seamlessly traverse international skies, effortlessly connecting global hubs and transforming layovers into adventures. Your express ticket to explore the world in transit"/>
 
     </div>
-   </div>
+   </div> 
+   <WhatsAppButton phoneNumber={+971524800683} message={""}/>
 
-   
-      
-     
-    </>
+    </div>
   )
 }
 
