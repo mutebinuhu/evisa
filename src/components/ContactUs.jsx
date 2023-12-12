@@ -2,10 +2,14 @@
 
 import React, {useState} from 'react';
 import { motion } from 'framer-motion';
+import CancelIcon from './CancelIcon';
 
 
 const ContactUs = ({showPage}) => {
   console.log("show pae", showPage)
+  const hideForm = () => {
+    console.log("curr", !showPage)
+  }
   if(showPage){
     return(
 
@@ -16,7 +20,11 @@ const ContactUs = ({showPage}) => {
       transition={{ duration: 0.5 }}
       className="container mx-auto mt-8 bg-gray-300  px-2 py-4 rounded-lg"
     >
+      <div className='flex justify-between'>
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+      <CancelIcon handleClick={()=>hideForm()} width={32} height={32} color="#000000" />
+      </div>
+      
       <form>
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium text-gray-600">
