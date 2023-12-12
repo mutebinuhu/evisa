@@ -11,6 +11,7 @@ import ImageOverlayComponent from './components/ImageOverlayComponent'
 import React from 'react';
 import WhatsAppButton from './components/WhatsAppButton'
 import { motion } from 'framer-motion';
+import ContactUs from './components/ContactUs'
 
 
 const YourCard = ({title, content, image}) => {
@@ -175,7 +176,9 @@ function App() {
 
   return (
     <div className='relative'>
-      
+      <div className='absolute right-0 z-30 w-1/3 screen bg-gray-100 px-4 py-4'>
+      <ContactUs/>
+      </div>
    <Navbar/>
    <div className='relative'>
    <Banner/>
@@ -202,8 +205,10 @@ function App() {
 
     </div>
    </div> 
-   <WhatsAppButton phoneNumber={+971524800683} message={""}/>
+<div className='fixed  bottom-0'>
+<WhatsAppButton phoneNumber={+971524800683} message={""}/>
 
+</div>
     </div>
   )
 }
