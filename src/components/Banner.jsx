@@ -11,11 +11,11 @@ const Banner = ({ title, description, image, buttonText, buttonLink }) => {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.5 }}
-     className="text-5xl font-bold mb-2 mx-4">Apply for Your Visa with Confidence </motion.h2>
+     className="text-2xl md:text-5xl font-bold mb-2 mx-4">Apply for Your Visa with Confidence </motion.h2>
         <motion.p initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.5 }} className="text-2xl mx-4 my-4">Let our experts help you every step of the way</motion.p>
+    transition={{ duration: 0.5 }} className="text-xl ms:text-2xl mx-4 my-4">Let our experts help you every step of the way</motion.p>
         </div>
       </div>
     </div>
