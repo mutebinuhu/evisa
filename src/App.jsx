@@ -12,6 +12,8 @@ import React from 'react';
 import WhatsAppButton from './components/WhatsAppButton'
 import { motion } from 'framer-motion';
 import ContactUs from './components/ContactUs'
+import TopMostVisas from './components/TopMostVisas'
+import Slider from './components/Slider'
 
 
 const YourCard = ({title, content, image, clickHandler}) => {
@@ -88,31 +90,9 @@ const VisaForm = () => {
     <div className='mx-4 '>
     <form onSubmit={handleSubmit} className="w-full">
       <div className='flex justify-center space-x-8'>
-
-      <div className="mb-4 w-28 sm:w-52">
-        <label htmlFor="name" className="block text-white text-sm font-bold mb-2">
-          Country
-        </label>
-        <select
-          id="country"
-          name="country"
-          value={formData.country}
-          onChange={handleChange}
-          className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        >
-          {countries.map((country)=>{
-            return(
-              <option value={country.code}>{country.name}</option>
-
-            )
-          })}
-          {/* Add more options as needed */}
-        </select>
-      </div>
-
       <div className="mb-4 w-28 sm:w-52">
         <label htmlFor="nationality" className="block text-white text-sm font-bold mb-2">
-          Nationality
+          Citizen Of
         </label>
         <select
           id="nationality"
@@ -131,7 +111,29 @@ const VisaForm = () => {
           {/* Add more options as needed */}
         </select>
       </div>
-      <div className="mb-4  w-28 sm:w-52">
+      <div className="mb-4 w-28 sm:w-52">
+        <label htmlFor="name" className="block text-white text-sm font-bold mb-2">
+          Travelling To
+        </label>
+        <select
+          id="country"
+          name="country"
+          value={formData.country}
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        >
+          {countries.map((country)=>{
+            return(
+              <option value={country.code}>{country.name}</option>
+
+            )
+          })}
+          {/* Add more options as needed */}
+        </select>
+      </div>
+
+      
+     {/* <div className="mb-4  w-28 sm:w-52">
         <label htmlFor="location" className="block text-white text-sm font-bold mb-2">
           Location
         </label>
@@ -149,13 +151,13 @@ const VisaForm = () => {
             )
           })}
       
-          {/* Add more options as needed */}
         </select>
       </div>
+    */}
       <div className="flex items-center justify-center">
         <button
           type="submit"
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 mt-3 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-green-500 text-xs hover:bg-green-700 text-white font-bold py-4 mt-3 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Get started
         </button>
@@ -193,7 +195,7 @@ function App() {
     <h2 className='text-center py-4 text-2xl text-bold py-8'>UAE Most Popular Visas</h2>
    </div>
 
-   <div className='sm:flex mx-4 space-x-4'>
+   <div className='sm:flex px-4  md:space-x-4  md:px-4'>
     <div className='flex-1'>
       <YourCard clickHandler={()=>setShowContactPage(true)} title="Vist Visa" image="https://img.freepik.com/free-photo/side-view-man-holding-passports_23-2150433348.jpg?w=826&t=st=1702294200~exp=1702294800~hmac=8ace8958c753a334b26a66a6d63b93ff1329d4c43f4674a3ac9fc743166f6749" content="Embark on a Journey of a Lifetime: Unleash the adventure waiting for you with our seamless visit visa services. Picture yourself exploring vibrant cultures, savoring exotic cuisines, and creating memories that last a lifetime. Let us be your gateway to new horizons."/>
 
@@ -207,6 +209,7 @@ function App() {
 
     </div>
    </div> 
+
 <div className='fixed  bottom-0'>
 <WhatsAppButton phoneNumber={+971524800683} message={""}/>
 
