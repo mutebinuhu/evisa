@@ -157,7 +157,7 @@ const VisaForm = () => {
       <div className="flex items-center justify-center">
         <button
           type="submit"
-          className="bg-green-500 text-xs hover:bg-green-700 text-white font-bold py-4 mt-3 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-green-500 text-xs hover:bg-green-700 text-white font-bold py-2 sm:py-4 mt-3 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Get started
         </button>
