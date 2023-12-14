@@ -6,6 +6,8 @@ import Navbar from './components/Nav'
 import Banner from './components/Banner'
 import MyComponent from './components/MyComponent'
 import ImageOverlayComponent from './components/ImageOverlayComponent'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 import React from 'react';
@@ -16,7 +18,7 @@ import TopMostVisas from './components/TopMostVisas'
 import Slider from './components/Slider'
 
 
-const YourCard = ({title, content, image, clickHandler, showButtons=true, showImage=true}) => {
+const YourCard = ({title, content, image, clickHandler,}) => {
   return (
     <motion.div initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -24,11 +26,9 @@ const YourCard = ({title, content, image, clickHandler, showButtons=true, showIm
     transition={{ duration: 0.5 }}
      className="max-w-md  mx-auto bg-white rounded-md overflow-hidden shadow-md m-4">
       {/* Image Placeholder */}
-      {showImage &&
       <div className="w-full h-40 bg-gray-300  bg-cover bg-center" style={{backgroundImage:`url(${image})`}}>
 
       </div>
-      }
 
       {/* Text Content */}
       <div className="p-6">
@@ -38,8 +38,6 @@ const YourCard = ({title, content, image, clickHandler, showButtons=true, showIm
         </p>
 
         {/* Submit Button */}
-        {showButtons &&
-        <>
         <button
           type="submit"
           onClick={clickHandler}
@@ -53,8 +51,6 @@ const YourCard = ({title, content, image, clickHandler, showButtons=true, showIm
         >
           Request Callback
         </button>
-        </>
-        }
       </div>
     </motion.div>
   );
@@ -176,7 +172,40 @@ const VisaForm = () => {
   );
 };
 
+ const Service = ({title, content, image, clickHandler}) =>{
+  return (
+    <motion.div initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.5 }}
+     className="max-w-md   mx-auto bg-white rounded-md overflow-hidden shadow-md">
+      {/* Image Placeholder */}
+      <div className='flex justify-center'>
+      <FontAwesomeIcon icon={faCoffee} size='6x' />
+      </div>
 
+      {/* Text Content */}
+      <div className="p-6">
+        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <p className="text-gray-700 mb-4">
+          {content}
+        </p>
+
+        {/* Submit Button */}
+        <div className='text-center'>
+        <button
+          type="submit"
+          onClick={clickHandler}
+          className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Make Inquiry
+        </button>
+        </div>
+        
+      </div>
+    </motion.div>
+  );
+ }
 
 
 
@@ -215,6 +244,16 @@ function App() {
 
     </div>
    </div> 
+   <section>
+        <h2>Why Choose Us</h2>
+       <div>
+       <Service content="We fulfill all the requirements related to every type of travel visa. We have been working in this field for many years to become a leader in the visa industry"/>
+        <Service content="We fulfill all the requirements related to every type of travel visa. We have been working in this field for many years to become a leader in the visa industry"/>
+        <Service content="We fulfill all the requirements related to every type of travel visa. We have been working in this field for many years to become a leader in the visa industry"/>
+       </div>
+
+        
+   </section>
 
 <div className='fixed  bottom-0'>
 <WhatsAppButton phoneNumber={+971524800683} message={""}/>
