@@ -16,7 +16,7 @@ import TopMostVisas from './components/TopMostVisas'
 import Slider from './components/Slider'
 
 
-const YourCard = ({title, content, image, clickHandler}) => {
+const YourCard = ({title, content, image, clickHandler, showButtons=true, showImage=true}) => {
   return (
     <motion.div initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -24,9 +24,11 @@ const YourCard = ({title, content, image, clickHandler}) => {
     transition={{ duration: 0.5 }}
      className="max-w-md  mx-auto bg-white rounded-md overflow-hidden shadow-md m-4">
       {/* Image Placeholder */}
+      {showImage &&
       <div className="w-full h-40 bg-gray-300  bg-cover bg-center" style={{backgroundImage:`url(${image})`}}>
 
       </div>
+      }
 
       {/* Text Content */}
       <div className="p-6">
@@ -36,6 +38,8 @@ const YourCard = ({title, content, image, clickHandler}) => {
         </p>
 
         {/* Submit Button */}
+        {showButtons &&
+        <>
         <button
           type="submit"
           onClick={clickHandler}
@@ -49,6 +53,8 @@ const YourCard = ({title, content, image, clickHandler}) => {
         >
           Request Callback
         </button>
+        </>
+        }
       </div>
     </motion.div>
   );
