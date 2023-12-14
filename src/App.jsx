@@ -41,13 +41,13 @@ const YourCard = ({title, content, image, clickHandler}) => {
           onClick={clickHandler}
           className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Book Now
+          Make Inquiry
         </button>
         <button
           type="submit"
           className="rounded-lg border-2 mx-2 border-green-500 hover:text-white hover:bg-green-700  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Learn More
+          Request Callback
         </button>
       </div>
     </motion.div>
@@ -180,7 +180,7 @@ function App() {
 
   return (
     <div className='relative'>
-      <div className='fixed right-0 z-30 w-1/3 screen '>
+      <div className='fixed right-0 z-30  screen '>
       <ContactUs showPage={showContactPage}/>
       </div>
    <Navbar/>

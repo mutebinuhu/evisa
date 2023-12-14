@@ -21,7 +21,11 @@ const ContactUs = ({showPage}) => {
       className="container mx-auto mt-8 bg-gray-300  px-2 py-4 rounded-lg"
     >
       <div className='flex justify-between'>
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+      <div>
+      <h1 className="text-4xl font-bold mb-4 text-center">We’ll help you get started</h1>
+
+      <h2 className="text-xl font-bold mb-4 text-center">Discuss your queries with our Visa expert today</h2>
+      </div>
       <CancelIcon handleClick={()=>hideForm()} width={32} height={32} color="#000000" />
       </div>
       
