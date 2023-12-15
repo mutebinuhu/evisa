@@ -41,7 +41,7 @@ const YourCard = ({title, content, image, clickHandler,}) => {
         <button
           type="submit"
           onClick={clickHandler}
-          className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-2 sm:px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Make Inquiry
         </button>
@@ -178,7 +178,7 @@ const VisaForm = () => {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.5 }}
-     className="max-w-md   mx-auto bg-white rounded-md overflow-hidden shadow-md">
+     className="max-w-md   mx-4 md:mx-auto  rounded-md overflow-hidden bg-gray-100 mb-6 ">
       {/* Image Placeholder */}
       <div className='flex justify-center'>
       <FontAwesomeIcon icon={faCoffee} size='6x' />
@@ -186,7 +186,7 @@ const VisaForm = () => {
 
       {/* Text Content */}
       <div className="p-6">
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <h2 className="text-xl font-semibold text-center mb-2">{title}</h2>
         <p className="text-gray-700 mb-4">
           {content}
         </p>
@@ -227,6 +227,12 @@ function App() {
 
    </div>
    <div>
+   <div className='p-6 text-center'>
+      <p>        At kaptraveler, we understand the stress and complexity of navigating the visa application process. Our team of experienced consultants, with a proven track record of success, provides personalized guidance tailored to your specific needs and visa goals. We offer transparent communication, upfront fees, and efficient service, ensuring you stay informed and on track every step of the way. Whether you're facing a challenging case or simply seeking expert advice, we're here to empower you with the knowledge and confidence to achieve your visa dream
+</p>
+   </div>
+   </div>
+   <div>
     <h2 className='text-center py-4 text-2xl text-bold py-8'>UAE Most Popular Visas</h2>
    </div>
 
@@ -245,11 +251,42 @@ function App() {
     </div>
    </div> 
    <section>
-        <h2>Why Choose Us</h2>
-       <div>
-       <Service content="We fulfill all the requirements related to every type of travel visa. We have been working in this field for many years to become a leader in the visa industry"/>
-        <Service content="We fulfill all the requirements related to every type of travel visa. We have been working in this field for many years to become a leader in the visa industry"/>
-        <Service content="We fulfill all the requirements related to every type of travel visa. We have been working in this field for many years to become a leader in the visa industry"/>
+
+        <h2 className='text-center px-2 py-6 text-2xl'>Why Choose Us For <span className='font-bold'>Realiable Visa Services</span></h2>
+       
+       <div className=''>
+       <div className='md:flex md:space-x-4 md:mx-4'>
+        <div className='flex-1'>
+        <Service title="Expertise and Professionalism " content="What sets us apart at kaptraveler is our team of seasoned professionals who bring a wealth of knowledge and expertise to the table. Our visa consultants are well-versed in the latest immigration regulations, policies, and procedures"/>
+
+        </div>
+        <div className='flex-1'>
+        <Service title="Personalized Consultation" content="We understand that each individual's visa situation is unique. At KapTraveler, we take a personalized approach to ensure that your specific needs and circumstances are addressed with care and attention to detail."/>
+
+        </div>
+        <div className='flex-1'>
+        <Service title="Client-Centric Approach" content="At the core of our business is a client-centric approach focused on delivering exceptional service and exceeding your expectations. We value transparency, communication, and integrity in all our interactions."/>
+
+        </div>
+       </div>
+       
+       <div  className='md:flex md:space-x-4 md:mx-4'>
+        <div className='flex-1'>
+        <Service title="Global Reach and Local Insight" content="With a global perspective and local insight, KapTraveler is well-equipped to assist clients from various regions and backgrounds. Our consultants possess a deep understanding of the unique requirements and intricacies associated with different countries' visa processes."/>
+
+        </div>
+        <div className='flex-1'>
+        <Service title="Continuous Support and Up-to-Date Information" content="Embarking on a visa application journey can be overwhelming, and at KapTraveler, we recognize the importance of ongoing support. Our commitment to your success extends beyond the initial consultation."/>
+
+        </div>
+
+        <div className='flex-1'>
+        <Service title="Cutting-Edge Technology for Efficiency" content="At KapTraveler, we leverage cutting-edge technology to enhance the efficiency of the visa application process. Our streamlined systems and digital platforms are designed to simplify document submission, communication, and tracking"/>
+
+        </div>
+
+        </div>
+
        </div>
 
         
