@@ -215,7 +215,7 @@ function App() {
 
   return (
     <div className='relative'>
-      <div className='fixed right-0 z-30  screen '>
+      <div className='fixed md:right-4 z-30  screen '>
       <ContactUs showPage={showContactPage}/>
       </div>
    <Navbar/>
@@ -291,7 +291,9 @@ function App() {
 
         
    </section>
-
+<div>
+  <ContactUs/>
+</div>
 <div className='fixed  bottom-0'>
 <WhatsAppButton phoneNumber={+971524800683} message={""}/>
 
