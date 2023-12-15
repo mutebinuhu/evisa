@@ -41,13 +41,13 @@ const YourCard = ({title, content, image, clickHandler,}) => {
         <button
           type="submit"
           onClick={clickHandler}
-          className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-2 sm:px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-green-500  border-green-500 border-2  hover:bg-green-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline"
         >
           Make Inquiry
         </button>
         <button
           type="submit"
-          className="rounded-lg border-2 mx-2 border-green-500 hover:text-white hover:bg-green-700  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="rounded-lg border-2 mx-2 border-green-500 hover:text-white hover:bg-green-700  font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline"
         >
           Request Callback
         </button>
