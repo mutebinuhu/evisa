@@ -35,7 +35,7 @@ const ContactUs = ({showPage}) => {
             Name
           </label>
           <input
-            type="email"
+            type="name"
             id="name"
             name="name"
             className="mt-1 p-2 border rounded-md w-full"
