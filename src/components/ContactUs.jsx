@@ -18,19 +18,31 @@ const ContactUs = ({showPage}) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto mt-8 bg-gray-300  px-2 py-4 rounded-lg"
+      className="container mx-auto mt-8 bg-gray-100  px-2 py-4 rounded-lg"
     >
       <div className='flex justify-between'>
       <div>
-      <h1 className="text-4xl font-bold mb-4 text-center">We’ll help you get started</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">We’ll help you get started</h1>
 
-      <h2 className="text-xl font-bold mb-4 text-center">Discuss your queries with our Visa expert today</h2>
+      <h2 className="text-md font-bold mb-4 text-center">Discuss your queries with our Visa expert today</h2>
       </div>
       <CancelIcon handleClick={()=>hideForm()} width={32} height={32} color="#000000" />
       </div>
       
       <form>
-        <div className="mb-4">
+      <div className="mb-3">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-600">
+            Name
+          </label>
+          <input
+            type="email"
+            id="name"
+            name="name"
+            className="mt-1 p-2 border rounded-md w-full"
+            required
+          />
+        </div>
+        <div className="mb-3">
           <label htmlFor="email" className="block text-sm font-medium text-gray-600">
             Email
           </label>
@@ -42,7 +54,7 @@ const ContactUs = ({showPage}) => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label htmlFor="phone" className="block text-sm font-medium text-gray-600">
             Phone Number
           </label>
@@ -54,7 +66,7 @@ const ContactUs = ({showPage}) => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label htmlFor="message" className="block text-sm font-medium text-gray-600">
             Message
           </label>
