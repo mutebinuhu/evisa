@@ -4,10 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Nav'
 import Banner from './components/Banner'
-import MyComponent from './components/MyComponent'
-import ImageOverlayComponent from './components/ImageOverlayComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faHandHoldingHand, faLandmark } from '@fortawesome/free-solid-svg-icons'
 
 
 import React from 'react';
@@ -180,8 +178,11 @@ const VisaForm = () => {
     transition={{ duration: 0.5 }}
      className="max-w-md   mx-4 md:mx-auto  rounded-md overflow-hidden bg-gray-100 mb-6 ">
       {/* Image Placeholder */}
-      <div className='flex justify-center'>
-      <FontAwesomeIcon icon={faCoffee} size='6x' />
+      <div className='flex justify-center py-4'>
+        <div className='bg-white p-4 rounded-full'>
+        <FontAwesomeIcon icon={faHandHoldingHand} size='3x' />
+
+        </div>
       </div>
 
       {/* Text Content */}
@@ -227,7 +228,7 @@ function App() {
 
    </div>
    <div>
-   <div className='p-6 text-center'>
+   <div className='p-12 text-center'>
       <p>        At kaptraveler, we understand the stress and complexity of navigating the visa application process. Our team of experienced consultants, with a proven track record of success, provides personalized guidance tailored to your specific needs and visa goals. We offer transparent communication, upfront fees, and efficient service, ensuring you stay informed and on track every step of the way. Whether you're facing a challenging case or simply seeking expert advice, we're here to empower you with the knowledge and confidence to achieve your visa dream
 </p>
    </div>
