@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 import CancelIcon from './CancelIcon';
 
 
-const ContactUs = ({showPage}) => {
-  console.log("show pae", showPage)
-  const hideForm = () => {
-    console.log("curr", !showPage)
-  }
+const ContactUs = ({showPage, handleChange}) => {
+  
+
+  console.log("test im clicked")
+ 
   if(showPage){
     return(
 
@@ -26,7 +26,10 @@ const ContactUs = ({showPage}) => {
 
       <h2 className="text-md font-bold mb-4 text-center">Discuss your queries with our Visa expert today</h2>
       </div>
-      <CancelIcon handleClick={()=>hideForm()} width={32} height={32} color="#000000" />
+      <div onClick={()=>handleChange(false)}>
+      <CancelIcon width={32} height={32} color="#000000" />
+
+      </div>
       </div>
       
       <form>

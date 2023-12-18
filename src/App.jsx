@@ -213,11 +213,14 @@ const VisaForm = () => {
 function App() {
   const [count, setCount] = useState(0)
   const [showContactPage, setShowContactPage] = useState(false)
+  const handleChangeState = (newState) =>{
+    setShowContactPage(newState)
+  }
 
   return (
     <div className='relative'>
       <div className='fixed md:right-4  z-30  screen '>
-      <ContactUs showPage={showContactPage}/>
+      <ContactUs showPage={showContactPage} handleChange={(newState)=>handleChangeState(newState)}/>
       </div>
    <Navbar/>
    <div className='relative'>
